@@ -175,11 +175,14 @@ python linux_do_gui.py
 
 ### 项目文件结构
 
-  linuxdo/
-  ├── linux_do_gui.py           # 主程序
-  ├── build.py                  # 打包脚本
-  ├── README.md                 # 项目说明
-  └── BUILD_GUIDE.md            # 打包指南
+linuxdo/
+├── linux_do_gui.py           # 主程序
+
+├── build.py                  # 打包脚本
+
+├── README.md                 # 项目说明
+
+└── BUILD_GUIDE.md            # 打包指南
 
 
 ## 技术栈
@@ -215,4 +218,5 @@ MIT License
 <p align="center">
   <sub>如果觉得有用，欢迎 Star 支持一下</sub>
 </p>
+
 

@@ -1489,82 +1489,8 @@ class GUI:
         s.rt.destroy()
 
     def _ui(s):
-        # 自定义标题栏
-        title_bar = tk.Frame(s.rt, bg="#0f3460", height=40)
-        title_bar.pack(fill=tk.X)
-        title_bar.pack_propagate(False)
-
-        # 标题栏可拖动
-        title_bar.bind("<Button-1>", s._start_drag)
-        title_bar.bind("<B1-Motion>", s._do_drag)
-
-        # 左侧图标和标题
-        title_left = tk.Frame(title_bar, bg="#0f3460")
-        title_left.pack(side=tk.LEFT, padx=10)
-
-        tk.Label(
-            title_left,
-            text="◆",
-            font=("Segoe UI", 14),
-            bg="#0f3460",
-            fg="#00d9ff",
-        ).pack(side=tk.LEFT, padx=(5, 8))
-
-        title_label = tk.Label(
-            title_left,
-            text=f"Linux.do 刷帖助手 v{VERSION}",
-            font=("Microsoft YaHei UI", 11, "bold"),
-            bg="#0f3460",
-            fg="#ffffff",
-        )
-        title_label.pack(side=tk.LEFT)
-        title_label.bind("<Button-1>", s._start_drag)
-        title_label.bind("<B1-Motion>", s._do_drag)
-
-        # 右侧按钮
-        btn_frame = tk.Frame(title_bar, bg="#0f3460")
-        btn_frame.pack(side=tk.RIGHT, padx=5)
-
-        # 最小化按钮
-        min_btn = tk.Label(
-            btn_frame,
-            text="─",
-            font=("Segoe UI", 12),
-            bg="#0f3460",
-            fg="#ffffff",
-            width=4,
-            cursor="hand2",
-        )
-        min_btn.pack(side=tk.LEFT, padx=2)
-        min_btn.bind("<Button-1>", lambda e: s._minimize())
-        min_btn.bind("<Enter>", lambda e: min_btn.config(bg="#1a5490"))
-        min_btn.bind("<Leave>", lambda e: min_btn.config(bg="#0f3460"))
-
-        # 关闭按钮
-        close_btn = tk.Label(
-            btn_frame,
-            text="✕",
-            font=("Segoe UI", 12),
-            bg="#0f3460",
-            fg="#ffffff",
-            width=4,
-            cursor="hand2",
-        )
-        close_btn.pack(side=tk.LEFT, padx=2)
-        close_btn.bind("<Button-1>", lambda e: s._close())
-        close_btn.bind("<Enter>", lambda e: close_btn.config(bg="#e94560"))
-        close_btn.bind("<Leave>", lambda e: close_btn.config(bg="#0f3460"))
-
-        # 状态显示
+        # 状态变量（放在顶部，供其他地方使用）
         s.status = tk.StringVar(value="就绪")
-        status_label = tk.Label(
-            btn_frame,
-            textvariable=s.status,
-            font=("Microsoft YaHei UI", 9),
-            bg="#0f3460",
-            fg="#00d9ff",
-        )
-        status_label.pack(side=tk.LEFT, padx=(0, 15))
 
         # 内容区域
         content = tk.Frame(s.rt, bg="#1a1a2e")

@@ -56,7 +56,7 @@ on:
       topics:
         description: '浏览帖子数量'
         required: false
-        default: '20000'
+        default: '2000'
       like_rate:
         description: '点赞概率 (0-100)'
         required: false
@@ -65,7 +65,7 @@ on:
 jobs:
   browse:
     runs-on: ubuntu-latest
-    timeout-minutes: 1440  # 最长运行1天
+    timeout-minutes: 60  # 最长运行1小时
 
     steps:
       # 检出代码
